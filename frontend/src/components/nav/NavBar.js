@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router'
+
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import DrawerSimple from './Drawer';
@@ -22,7 +24,7 @@ class NavBar extends React.Component {
         flexWrap: 'wrap'
       },
       tabs: {
-        width: '75%'
+        width: '100%'
       }
     }
     return (
@@ -30,14 +32,14 @@ class NavBar extends React.Component {
         <DrawerSimple open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
           title="Title of Site"
+          onTitleTouchTap={()=>this.props.router.push('/')}
           style={styles.appBar}
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
           onLeftIconButtonTouchTap={this.handleToggle} >
           <Tabs style={styles.tabs}>
-            <Tab label="Item 1" />
-            <Tab label="Item 2" />
-            <Tab label="Item 3" />
-            <Tab label="Item 4" />
+            <Tab label="About" containerElement={<Link to="/about" />}></Tab>
+            <Tab label="Recent Years" containerElement={<Link to="/recent-years" />} ></Tab>
+            <Tab label="Alumni" containerElement={<Link to="/alumni" />}></Tab>
+            <Tab label="Contact" containerElement={<Link to="/contact" />} ></Tab>
           </Tabs>
         </AppBar>
       </div>
@@ -45,4 +47,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
