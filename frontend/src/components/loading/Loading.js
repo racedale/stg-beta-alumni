@@ -1,9 +1,11 @@
 import React from 'react';
+import './loading.css'
 
 const Loading = (props) => {
   return (
     <div className="loading">
-      <h2>Loading...</h2>
+      <img src="/images/loading.png" className="loading-logo" alt="logo"/>
+      <p>Loading...</p>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from './Loading';
+import Loading from './loading/Loading';
 
 const About = (props, context) => {
 
@@ -30,8 +30,6 @@ const About = (props, context) => {
             These may take a minute to download after you click on the link.
           </p>
         </div>
-        {console.log(context)}
-        {console.log(props)}
         {renderContent()}
       </div>
     )

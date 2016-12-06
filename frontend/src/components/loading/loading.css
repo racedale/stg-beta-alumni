@@ -1,0 +1,14 @@
+.loading {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.loading-logo {
+  animation: logo-spin infinite 6s linear;
+  max-width: 20px;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

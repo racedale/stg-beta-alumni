@@ -13,7 +13,7 @@ import Home from './components/home/Home';
 import NavBar from './components/nav/NavBar'
 import NotFound from './components/NotFound';
 import About from './components/About';
-// import Loading from './components/Loading';
+// import Loading from './components/loading/Loading';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -68,7 +68,9 @@ class Root extends React.Component {
     return (
       <div>
         <NavBar />
-        {childrenWithProps}
+        <main className="content">
+          {childrenWithProps}
+        </main>
       </div>
     )
   }
@@ -87,6 +89,6 @@ ReactDOM.render(
         <Route path="*" component={NotFound}/>
       </Route>
     </Router>
-</MuiThemeProvider>,
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
