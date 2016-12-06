@@ -31,7 +31,7 @@ class NavBar extends React.Component {
       <div>
         <DrawerSimple open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
-          title="Title of Site"
+          title="Organization"
           onTitleTouchTap={()=>this.props.router.push('/')}
           style={styles.appBar}
           onLeftIconButtonTouchTap={this.handleToggle} >
