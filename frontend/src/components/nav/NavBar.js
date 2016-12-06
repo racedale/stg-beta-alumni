@@ -21,18 +21,18 @@ class NavBar extends React.Component {
   render() {
     const styles = {
       appBar: {
-        flexWrap: 'wrap'
+        justifyContent: 'space-between'
       },
       tabs: {
-        width: '100%'
+        flex: '0 1 70%'
       }
     }
     return (
-      <div>
+      <nav className="navbar">
         <DrawerSimple open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
           title="Organization"
-          onTitleTouchTap={()=>this.props.router.push('/')}
+          // onTitleTouchTap={()=>this.props.router.push('/')}
           style={styles.appBar}
           onLeftIconButtonTouchTap={this.handleToggle} >
           <Tabs style={styles.tabs}>
@@ -42,7 +42,7 @@ class NavBar extends React.Component {
             <Tab label="Contact" containerElement={<Link to="/contact" />} ></Tab>
           </Tabs>
         </AppBar>
-      </div>
+      </nav>
     )
   }
 }
