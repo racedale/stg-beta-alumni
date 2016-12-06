@@ -1,15 +1,15 @@
 import React from 'react';
 import Loading from './Loading';
 
-class About extends React.Component {
+const About = (props, context) => {
 
-  renderContent() {
-    if(this.context.loading) {
+  function renderContent() {
+    if(context.loading) {
       return (
         <Loading />
       )
     } else {
-      return this.props.data.map((post, index) => {
+      return props.data.map((post, index) => {
         return (
           <div key={index} className="post">
             <h3>{post.title.rendered}</h3>
@@ -20,7 +20,6 @@ class About extends React.Component {
     }
   }
 
-  render() {
     return (
       <div>
         <div className="App-header">
@@ -31,12 +30,11 @@ class About extends React.Component {
             These may take a minute to download after you click on the link.
           </p>
         </div>
-        {console.log(this.context)}
-        {console.log(this.props)}
-        {this.renderContent()}
+        {console.log(context)}
+        {console.log(props)}
+        {renderContent()}
       </div>
-    );
-  }
+    )
 }
 
 About.contextTypes = {
