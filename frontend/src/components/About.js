@@ -1,12 +1,10 @@
 import React from 'react';
 import Loading from './loading/Loading';
-import axios from 'axios';
 
 class About extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.renderContent = this.renderContent.bind(this);
-    this.serverRequest = this.serverRequest.bind(this);
     this.fetchData = this.fetchData.bind(this);
     this.state = {
       loading: true
@@ -21,22 +19,15 @@ class About extends React.Component {
   }
 
   fetchData() {
-    this.imgUrl = this.serverRequest("media").then((response) => {
+    this.imgUrl = this.context.serverRequest("wp", "media").then((response) => {
       this.imgUrl = response;
       return response;
     })
-    this.postData = this.serverRequest("posts").then((response) => {
+    this.postData = this.context.serverRequest("wp", "posts").then((response) => {
       this.postData = response;
       return response;
     })
     return Promise.all([this.imgUrl, this.postData])
-  }
-
-  serverRequest(url) {
-    return axios.get("http://192.168.99.100:8080/wp-json/wp/v2/" + url)
-      .then((response) => {
-        return response.data;
-      })
   }
 
   renderContent() {
@@ -50,7 +41,7 @@ class About extends React.Component {
           <div key={index} className="post">
             <h3>{post.title.rendered}</h3>
             <p>{post.excerpt.rendered}</p>
-            <img src={this.imgUrl[0].source_url} alt="test image" width="200"/>
+            <img src={this.imgUrl[index].source_url} alt={this.imgUrl[index].alt_text} width="200"/>
           </div>
         )
       })

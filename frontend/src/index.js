@@ -31,7 +31,7 @@ const muiTheme = getMuiTheme({
 class Root extends React.Component {
   constructor() {
     super();
-    // this.serverRequest = this.serverRequest.bind(this);
+    this.serverRequest = this.serverRequest.bind(this);
     this.state = {
       data: [],
       loading: true
@@ -46,6 +46,13 @@ class Root extends React.Component {
     this.serverRequest.abort();
   }
 
+  serverRequest(src, url) {
+    return axios.get(`http://192.168.99.100:8080/wp-json/${src}/v2/${url}`)
+      .then((response) => {
+        return response.data;
+      })
+    }
+
   getChildContext() {
     return {
       loading: this.state.loading,
@@ -53,17 +60,6 @@ class Root extends React.Component {
       serverRequest: this.serverRequest
     };
   }
-
-  // serverRequest(url) {
-  //   return axios.get("http://192.168.99.100:8080/wp-json/wp/v2/" + url)
-  //     .then((response) => {
-  //       // this.setState({
-  //       //   // data: response.data,
-  //       //   loading: false
-  //       // })
-  //       return response.data;
-  //     })
-  // }
 
   render() {
     let childrenWithProps = React.Children.map(this.props.children, (child) => {
