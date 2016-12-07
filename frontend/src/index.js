@@ -31,7 +31,7 @@ const muiTheme = getMuiTheme({
 class Root extends React.Component {
   constructor() {
     super();
-    this.serverRequest = this.serverRequest.bind(this);
+    // this.serverRequest = this.serverRequest.bind(this);
     this.state = {
       data: [],
       loading: true
