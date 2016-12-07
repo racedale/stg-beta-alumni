@@ -32,18 +32,11 @@ class Root extends React.Component {
   constructor() {
     super();
     this.serverRequest = this.serverRequest.bind(this);
-    this.state = {
-      data: [],
-      loading: true
-    }
-  }
-
-  componentDidMount(){
-    // this.serverRequest;
+    this.state = { }
   }
 
   componentWillUnmount() {
-    this.serverRequest.abort();
+    this.serverRequest.abort(); // Is this real?
   }
 
   serverRequest(src, url) {
@@ -55,8 +48,6 @@ class Root extends React.Component {
 
   getChildContext() {
     return {
-      loading: this.state.loading,
-      data: this.state.data,
       serverRequest: this.serverRequest
     };
   }
@@ -78,9 +69,8 @@ class Root extends React.Component {
     )
   }
 }
+
 Root.childContextTypes = {
-  loading: React.PropTypes.bool,
-  data: React.PropTypes.array,
   serverRequest: React.PropTypes.func
 }
 

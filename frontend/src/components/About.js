@@ -11,7 +11,6 @@ class About extends React.Component {
     }
     this.fetchData().then(() => {
       this.setState({
-        // data: response.data,
         loading: false
         })
       }
@@ -59,7 +58,6 @@ class About extends React.Component {
             These may take a minute to download after you click on the link.
           </p>
         </div>
-        {/* {console.log(imgUrl)} */}
         {this.renderContent()}
       </div>
     )
@@ -67,8 +65,6 @@ class About extends React.Component {
 }
 
 About.contextTypes = {
-  loading: React.PropTypes.bool,
-  data: React.PropTypes.array,
   serverRequest: React.PropTypes.func
 };
 
