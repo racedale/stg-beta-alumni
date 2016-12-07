@@ -31,6 +31,7 @@ const muiTheme = getMuiTheme({
 class Root extends React.Component {
   constructor() {
     super();
+    this.serverRequest = this.serverRequest.bind(this);
     this.state = {
       data: [],
       loading: true
@@ -38,13 +39,7 @@ class Root extends React.Component {
   }
 
   componentDidMount(){
-    this.serverRequest = axios.get("http://racedale.com/blog/wp-json/wp/v2/posts")
-      .then((response) => {
-        this.setState({
-          data: response.data,
-          loading: false
-        })
-      })
+    // this.serverRequest;
   }
 
   componentWillUnmount() {
@@ -54,9 +49,21 @@ class Root extends React.Component {
   getChildContext() {
     return {
       loading: this.state.loading,
-      data: this.state.data
+      data: this.state.data,
+      serverRequest: this.serverRequest
     };
   }
+
+  // serverRequest(url) {
+  //   return axios.get("http://192.168.99.100:8080/wp-json/wp/v2/" + url)
+  //     .then((response) => {
+  //       // this.setState({
+  //       //   // data: response.data,
+  //       //   loading: false
+  //       // })
+  //       return response.data;
+  //     })
+  // }
 
   render() {
     let childrenWithProps = React.Children.map(this.props.children, (child) => {
@@ -77,7 +84,8 @@ class Root extends React.Component {
 }
 Root.childContextTypes = {
   loading: React.PropTypes.bool,
-  data: React.PropTypes.array
+  data: React.PropTypes.array,
+  serverRequest: React.PropTypes.func
 }
 
 ReactDOM.render(
