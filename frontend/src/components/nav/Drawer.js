@@ -8,11 +8,22 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
 
-export default class DrawerSimple extends React.Component {
+class SidebarDrawer extends React.Component {
+  constructor() {
+    super();
+    this.renderUser = this.renderUser.bind(this);
+  }
 
-  constructor(props) {
-    super(props);
-    this.props = props;
+  renderUser() {
+    if(this.context.user && Object.keys(this.context.user).length > 0) {
+      return (
+        <ListItem
+          disabled={true}
+          leftAvatar={ <Avatar src={this.context.user.avatar} /> } >
+          {this.context.user.displayName}
+        </ListItem>
+      )
+    }
   }
 
   render() {
@@ -23,11 +34,7 @@ export default class DrawerSimple extends React.Component {
           width={200}
           onRequestChange={this.props.handleClose} >
           <List>
-            <ListItem
-              disabled={true}
-              leftAvatar={ <Avatar src="/images/default_avatar.jpg" /> } >
-              Default User
-            </ListItem>
+            {this.renderUser()}
           <Link to="/"><MenuItem onTouchTap={this.props.handleClose}>Home</MenuItem></Link>
           <Link to="/about"><MenuItem onTouchTap={this.props.handleClose}>About</MenuItem></Link>
         </List>
@@ -36,3 +43,9 @@ export default class DrawerSimple extends React.Component {
     );
   }
 }
+
+SidebarDrawer.contextTypes = {
+  user: React.PropTypes.object
+};
+
+export default SidebarDrawer;

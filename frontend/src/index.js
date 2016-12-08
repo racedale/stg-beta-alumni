@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-import axios from 'axios';
+// import axios from 'axios';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -14,6 +14,9 @@ import NavBar from './components/nav/NavBar'
 import NotFound from './components/NotFound';
 import About from './components/About';
 // import Loading from './components/loading/Loading';
+// import data from './data/data';
+import base from './base';
+
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -31,47 +34,91 @@ const muiTheme = getMuiTheme({
 class Root extends React.Component {
   constructor() {
     super();
-    this.serverRequest = this.serverRequest.bind(this);
-    this.state = { }
+    this.renderLogin = this.renderLogin.bind(this);
+    this.authenticate = this.authenticate.bind(this);
+    this.authHandler = this.authHandler.bind(this);
+    this.logout = this.logout.bind(this);
+    this.state = {
+      user: null
+    }
+  }
+
+  componentWillMount() {
+    this.ref = base.syncState(`/user`,
+      {
+        context: this,
+        state: 'user'
+      });
   }
 
   componentWillUnmount() {
-    this.serverRequest.abort(); // Is this real?
+    base.removeBinding(this.ref);
   }
 
-  serverRequest(src, url) {
-    return axios.get(`http://192.168.99.100:8080/wp-json/${src}/v2/${url}`)
-      .then((response) => {
-        return response.data;
-      })
+  renderLogin() {
+    return (
+      <button onClick={() => this.authenticate('facebook')}>Login</button>
+    )
+  }
+
+  authenticate(provider) {
+    console.log(`trying to login with ${provider}`)
+    base.authWithOAuthPopup(provider, this.authHandler);
+  }
+
+  authHandler(error, authData) {
+    console.log(authData)
+    if(error) {
+      console.error(error)
+      return;
     }
+
+    this.setState({
+      user: {
+        displayName: authData.user.displayName,
+        email: authData.user.email,
+        avatar: authData.user.providerData[0].photoURL
+      }
+    })
+  }
+
+  logout() {
+    base.unauth();
+    this.setState({
+      user: null
+    })
+    console.log("logged out")
+  }
 
   getChildContext() {
     return {
-      serverRequest: this.serverRequest
+      user: this.state.user
     };
   }
 
   render() {
     let childrenWithProps = React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
-        data: this.state.data,
-        loading: this.state.loading
+        // user: this.state.user
       })
     })
+
     return (
       <div>
         <NavBar />
         <main className="content">
           {childrenWithProps}
+          <button onClick={() => this.authenticate('facebook')}>Login</button>
+          <button onClick={this.logout}>Log out</button>
         </main>
+        {/* {this.renderLogin} */}
       </div>
     )
   }
 }
 
 Root.childContextTypes = {
-  serverRequest: React.PropTypes.func
+  user: React.PropTypes.object
 }
 
 ReactDOM.render(

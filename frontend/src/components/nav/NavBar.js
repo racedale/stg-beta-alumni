@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router'
 
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import DrawerSimple from './Drawer';
+import SidebarDrawer from './Drawer';
 
 class NavBar extends React.Component {
   constructor() {
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
     }
     return (
       <nav className="navbar">
-        <DrawerSimple open={this.state.open} handleClose={this.handleClose}/>
+        <SidebarDrawer open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
           title="Organization"
           // onTitleTouchTap={()=>this.props.router.push('/')}
