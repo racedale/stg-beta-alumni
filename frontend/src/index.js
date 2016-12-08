@@ -108,7 +108,8 @@ class Root extends React.Component {
         <NavBar />
         <main className="content">
           {childrenWithProps}
-          <button onClick={() => this.authenticate('facebook')}>Login</button>
+          <button onClick={() => this.authenticate('facebook')}>Login with Facebook</button>
+          <button onClick={() => this.authenticate('google')}>Login with Google</button>
           <button onClick={this.logout}>Log out</button>
         </main>
         {/* {this.renderLogin} */}
