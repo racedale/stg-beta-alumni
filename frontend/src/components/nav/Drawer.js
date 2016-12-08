@@ -19,7 +19,7 @@ class SidebarDrawer extends React.Component {
       return (
         <ListItem
           disabled={true}
-          leftAvatar={ <Avatar src={this.context.user.avatar} /> } >
+          leftAvatar={ <Avatar src={this.context.user.providerData[0].photoURL} /> } >
           {this.context.user.displayName}
         </ListItem>
       )
@@ -36,6 +36,7 @@ class SidebarDrawer extends React.Component {
           <List>
             {this.renderUser()}
           <Link to="/"><MenuItem onTouchTap={this.props.handleClose}>Home</MenuItem></Link>
+          <Link to="/login"><MenuItem onTouchTap={this.props.handleClose}>Login</MenuItem></Link>
           <Link to="/about"><MenuItem onTouchTap={this.props.handleClose}>About</MenuItem></Link>
         </List>
         </Drawer>

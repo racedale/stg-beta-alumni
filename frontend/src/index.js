@@ -13,10 +13,10 @@ import Home from './components/home/Home';
 import NavBar from './components/nav/NavBar'
 import NotFound from './components/NotFound';
 import About from './components/About';
+import Login from './components/login/Login';
 // import Loading from './components/loading/Loading';
 // import data from './data/data';
 import base from './base';
-
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -34,8 +34,6 @@ const muiTheme = getMuiTheme({
 class Root extends React.Component {
   constructor() {
     super();
-    this.renderLogin = this.renderLogin.bind(this);
-    this.authenticate = this.authenticate.bind(this);
     this.authHandler = this.authHandler.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
@@ -44,46 +42,29 @@ class Root extends React.Component {
   }
 
   componentWillMount() {
-    this.ref = base.syncState(`/user`,
-      {
-        context: this,
-        state: 'user'
-      });
-  }
-
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
-  }
-
-  renderLogin() {
-    return (
-      <button onClick={() => this.authenticate('facebook')}>Login</button>
-    )
-  }
-
-  authenticate(provider) {
-    console.log(`trying to login with ${provider}`)
-    base.authWithOAuthPopup(provider, this.authHandler);
+    // check if there is any order in localStorage
+    const localStorageRef = localStorage.getItem(`user`);
+    if(localStorageRef) {
+      //update state
+      this.setState({
+        user: JSON.parse(localStorageRef)
+      })
+    }
   }
 
   authHandler(error, authData) {
-    console.log(authData)
     if(error) {
       console.error(error)
       return;
     }
 
-    this.setState({
-      user: {
-        displayName: authData.user.displayName,
-        email: authData.user.email,
-        avatar: authData.user.providerData[0].photoURL
-      }
-    })
+    this.setState({ user: authData.user })
+    localStorage.setItem(`user`, JSON.stringify(authData.user));
   }
 
   logout() {
     base.unauth();
+    localStorage.removeItem(`user`);
     this.setState({
       user: null
     })
@@ -99,7 +80,8 @@ class Root extends React.Component {
   render() {
     let childrenWithProps = React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
-        // user: this.state.user
+        authHandler: this.authHandler,
+        logout: this.logout
       })
     })
 
@@ -108,11 +90,7 @@ class Root extends React.Component {
         <NavBar />
         <main className="content">
           {childrenWithProps}
-          <button onClick={() => this.authenticate('facebook')}>Login with Facebook</button>
-          <button onClick={() => this.authenticate('google')}>Login with Google</button>
-          <button onClick={this.logout}>Log out</button>
         </main>
-        {/* {this.renderLogin} */}
       </div>
     )
   }
@@ -128,6 +106,7 @@ ReactDOM.render(
       <Route path="/" component={Root}>
         <IndexRoute component={Home} />
         <Route path="about" component={About}/>
+        <Route path="login" component={Login}/>
         <Route path="*" component={NotFound}/>
       </Route>
     </Router>
