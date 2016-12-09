@@ -1,5 +1,4 @@
 import React from 'react';
-// import Loading from './loading/Loading';
 import base from '../base';
 
 
@@ -7,30 +6,11 @@ class About extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.renderContent = this.renderContent.bind(this);
-    // this.fetchData = this.fetchData.bind(this);
     this.state = {
       about: {},
       loading: true
     }
-    // this.fetchData().then(() => {
-    //   this.setState({
-    //     loading: false
-    //     })
-    //   }
-    // );
   }
-
-  // fetchData() {
-  //   this.imgUrl = this.context.serverRequest("wp", "media").then((response) => {
-  //     this.imgUrl = response;
-  //     return response;
-  //   })
-  //   this.postData = this.context.serverRequest("wp", "posts").then((response) => {
-  //     this.postData = response;
-  //     return response;
-  //   })
-  //   return Promise.all([this.imgUrl, this.postData])
-  // }
 
   componentWillMount() {
     this.ref = base.syncState(`/about`,
@@ -45,21 +25,12 @@ class About extends React.Component {
   }
 
   renderContent() {
-    // if(this.state.loading) {
-    //   return (
-    //     <Loading />
-    //   )
-    // } else {
-      // return this.postData.map((post, index) => {
-        return (
-          <div  className="post">
-            <h3>{this.state.about.title}</h3>
-            <p>{this.state.about.content}</p>
-            {/* <img src={this.imgUrl[index].source_url} alt={this.imgUrl[index].alt_text} width="200"/> */}
-          </div>
-        )
-      // })
-    // }
+    return (
+      <div  className="post">
+        <h3>{this.state.about.title}</h3>
+        <p>{this.state.about.content}</p>
+      </div>
+    )
   }
 
   render() {
@@ -74,13 +45,39 @@ class About extends React.Component {
           </p>
         </div>
         {this.renderContent()}
+        <tbody><tr class="esmR">
+          <td valign="top" class="esmD" width="50%">
+            <div class="esmCol">
+              <div align="left" class="esbSec">
+                <b><a href="http://pq.b5z.net/i/u/10103480/f/Diamond_Anneversary_Celebration.pdf">
+                75th Anniversary Celebration</a></b><br />
+              </div>
+              <div align="left" class="esbSec">
+                <b><a href="http://pq.b5z.net/i/u/10103480/f/Membership_Directory.pdf">
+                Previous Membership Directory </a></b><br />
+              </div>
+            </div>
+          </td>
+          <td valign="top" class="esmD" width="50%">
+            <div class="esmCol">
+              <div align="left" class="esbSec">
+                <b><a href="http://pq.b5z.net/i/u/10103480/f/The_Golden_Years-_Year_Book.pdf">
+                The Golden Years </a></b><br />
+              </div>
+              <div align="left" class="esbSec">
+                <b><a href="http://pq.b5z.net/i/u/10103480/f/Beta_Chapter_Diamond_Anniversary_Program.pdf">
+                Diamond Anniversary Program</a></b><br />
+              </div>
+              <div align="left" class="esbSec">
+                <b><a href="http://pq.b5z.net/i/u/10103480/f/Dedication_Ceremony_Atterberry_Brotherhood_Center.pdf">
+                Dedication Program - Atterberry Brotherhood Center</a></b><br />
+              </div>
+            </div>
+          </td></tr>
+        </tbody>
       </div>
     )
   }
 }
-
-// About.contextTypes = {
-//   serverRequest: React.PropTypes.func
-// };
 
 export default About;
