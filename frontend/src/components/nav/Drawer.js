@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 
+import './Drawer.css';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Avatar from 'material-ui/Avatar';
@@ -32,7 +33,9 @@ class SidebarDrawer extends React.Component {
         <Drawer docked={false}
           open={this.props.open}
           width={200}
-          onRequestChange={this.props.handleClose} >
+          onRequestChange={this.props.handleClose}
+          className="nav-drawer"
+          >
           <List>
             {this.renderUser()}
           <Link to="/"><MenuItem onTouchTap={this.props.handleClose}>Home</MenuItem></Link>
