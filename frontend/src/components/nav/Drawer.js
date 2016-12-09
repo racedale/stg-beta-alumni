@@ -24,6 +24,10 @@ class SidebarDrawer extends React.Component {
           {this.context.user.displayName}
         </ListItem>
       )
+    } else {
+      return (
+        <Link to="/login"><MenuItem onTouchTap={this.props.handleClose}>Login</MenuItem></Link>
+      )
     }
   }
 
@@ -39,8 +43,10 @@ class SidebarDrawer extends React.Component {
           <List>
             {this.renderUser()}
           <Link to="/"><MenuItem onTouchTap={this.props.handleClose}>Home</MenuItem></Link>
-          <Link to="/login"><MenuItem onTouchTap={this.props.handleClose}>Login</MenuItem></Link>
           <Link to="/about"><MenuItem onTouchTap={this.props.handleClose}>About</MenuItem></Link>
+          <Link to="/recent-years"><MenuItem onTouchTap={this.props.handleClose}>Recent Years</MenuItem></Link>
+          <Link to="/alumni"><MenuItem onTouchTap={this.props.handleClose}>Alumni</MenuItem></Link>
+          <Link to="/contact"><MenuItem onTouchTap={this.props.handleClose}>Contact</MenuItem></Link>
         </List>
         </Drawer>
       </div>

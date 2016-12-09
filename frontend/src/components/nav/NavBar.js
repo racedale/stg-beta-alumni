@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router'
 
 import AppBar from 'material-ui/AppBar';
-import {Tabs, Tab} from 'material-ui/Tabs';
+// import {Tabs, Tab} from 'material-ui/Tabs';
 import SidebarDrawer from './Drawer';
 
 class NavBar extends React.Component {
@@ -32,15 +32,14 @@ class NavBar extends React.Component {
         <SidebarDrawer open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
           title="Organization"
-          // onTitleTouchTap={()=>this.props.router.push('/')}
           style={styles.appBar}
           onLeftIconButtonTouchTap={this.handleToggle} >
-          <Tabs style={styles.tabs}>
+          {/* <Tabs style={styles.tabs}>
             <Tab label="About" containerElement={<Link to="/about" />}></Tab>
             <Tab label="Recent Years" containerElement={<Link to="/recent-years" />} ></Tab>
             <Tab label="Alumni" containerElement={<Link to="/alumni" />}></Tab>
             <Tab label="Contact" containerElement={<Link to="/contact" />} ></Tab>
-          </Tabs>
+          </Tabs> */}
         </AppBar>
       </nav>
     )
