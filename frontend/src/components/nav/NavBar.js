@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router'
+import { withRouter } from 'react-router'
 
 import AppBar from 'material-ui/AppBar';
 // import {Tabs, Tab} from 'material-ui/Tabs';
@@ -31,7 +31,7 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <SidebarDrawer open={this.state.open} handleClose={this.handleClose}/>
         <AppBar
-          title="Organization"
+          title="Sigma Tau Gamma - Beta Alumni"
           style={styles.appBar}
           onLeftIconButtonTouchTap={this.handleToggle} >
           {/* <Tabs style={styles.tabs}>
