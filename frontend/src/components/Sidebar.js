@@ -18,9 +18,9 @@ class Sidebar extends React.Component {
   //     });
   // }
 
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
-  }
+  // componentWillUnmount() {
+  //   base.removeBinding(this.ref);
+  // }
 
   render() {
     return (
