@@ -1,5 +1,6 @@
 .about tbody {
   margin-top: 2em;
+  width: auto;
 }
 .about a {
   color: #cc6600;

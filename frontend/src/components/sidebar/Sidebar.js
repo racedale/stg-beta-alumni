@@ -1,5 +1,7 @@
 import React from 'react';
-import base from '../base';
+// import base from '../../base';
+
+import './sidebar.css';
 
 class Sidebar extends React.Component {
   constructor(props, context) {
@@ -24,9 +26,9 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div>
+      <aside>
         This is the sidebar content
-      </div>
+      </aside>
     )
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import base from '../../base';
 
-import Sidebar from '../Sidebar'
+import Sidebar from '../sidebar/Sidebar'
 
 import './about.css';
 
@@ -82,9 +82,7 @@ class About extends React.Component {
             </div>
           </td></tr>
         </tbody>
-        <aside>
-          <Sidebar />
-        </aside>
+        <Sidebar />
       </div>
     )
   }
