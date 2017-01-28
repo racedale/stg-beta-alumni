@@ -1,7 +1,25 @@
-.about tbody {
+.about {
+  flex-wrap: wrap;
+}
+.about .flex-header{
+  flex: 1 1 100%;
+}
+.about #info-links {
+  flex: 1 1 100%;
   margin-top: 2em;
-  width: auto;
+}
+.about aside {
+  flex: 1 1 100%;
 }
 .about a {
   color: #cc6600;
+}
+
+@media (min-width: 768px ) {
+  .about #info-links {
+    flex: 1 1 80%;
+  }
+  .about aside {
+    flex: 1 1 20%;
+  }
 }
