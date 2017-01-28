@@ -12,7 +12,7 @@ import './index.css';
 import Home from './components/home/Home';
 import NavBar from './components/nav/NavBar'
 import NotFound from './components/NotFound';
-import About from './components/About';
+import About from './components/about/About';
 import Login from './components/login/Login';
 // import Loading from './components/loading/Loading';
 // import data from './data/data';

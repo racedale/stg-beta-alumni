@@ -1,7 +1,9 @@
 import React from 'react';
-import base from '../base';
+import base from '../../base';
 
-import Sidebar from './Sidebar'
+import Sidebar from '../Sidebar'
+
+import './about.css';
 
 class About extends React.Component {
   constructor(props, context) {
@@ -26,8 +28,8 @@ class About extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="App-header">
+      <div className="about">
+        <div className="app-header">
           <h2>{this.state.about.title}</h2>
           <p>
             The Beta Alumni Association of Sigma Tau Gamma at Truman State University has a rich history.
