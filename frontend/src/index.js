@@ -10,7 +10,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import './index.css';
 import Home from './components/home/Home';
-import NavBar from './components/nav/NavBar'
+import NavBar from './components/nav/NavBar';
+import Footer from './components/footer/Footer';
 import NotFound from './components/NotFound';
 import About from './components/about/About';
 import Login from './components/login/Login';
@@ -91,6 +92,7 @@ class Root extends React.Component {
         <main className="content">
           {childrenWithProps}
         </main>
+        <Footer />
       </div>
     )
   }
