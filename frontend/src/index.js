@@ -15,6 +15,8 @@ import Footer from './components/footer/Footer';
 import NotFound from './components/NotFound';
 import About from './components/about/About';
 import Login from './components/login/Login';
+import Alumni from './components/alumni/Alumni';
+import RecentYears from './components/recent-years/RecentYears';
 // import Loading from './components/loading/Loading';
 // import data from './data/data';
 import base from './base';
@@ -109,6 +111,8 @@ ReactDOM.render(
         <IndexRoute component={Home} />
         <Route path="about" component={About}/>
         <Route path="login" component={Login}/>
+        <Route path="recent-years" component={RecentYears}/>
+        <Route path="alumni" component={Alumni}/>
         <Route path="*" component={NotFound}/>
       </Route>
     </Router>
