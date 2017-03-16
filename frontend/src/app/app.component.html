@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+
+<md-sidenav #sidenav mode="side" class="app-sidenav">
+  <stg-sidebar></stg-sidebar>
+</md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    Sigma Tau Gamma - Beta Alumni
+
+    <span class="app-toolbar-filler"></span>
+    <!-- <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button> -->
+  </md-toolbar>
+  <md-card>
+    <h1>
+      {{title}}
+    </h1>
+  </md-card>
+</md-sidenav-container>\
