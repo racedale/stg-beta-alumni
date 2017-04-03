@@ -1,8 +1,8 @@
 - ~~Get Angular2 to run~~
 - ~~Add Angular2 Material~~
 - ~~Add super basic components~~
+- ~~Set up navigation/menu bar~~
 - Add basic routing
-- Set up navigation/menu bar
 - Do base stylings to match current site design
 - Layout home page
 - Layout sidebar
