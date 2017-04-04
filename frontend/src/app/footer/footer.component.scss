@@ -1,0 +1,20 @@
+:host {
+  text-align: center;
+
+  &::before {
+    border-top: 3px solid rgb(0, 102, 204);
+    content: '';
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+
+.footer-menu {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 1em;
+  }
+}
