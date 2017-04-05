@@ -2,11 +2,11 @@
 - ~~Add Angular2 Material~~
 - ~~Add super basic components~~
 - ~~Set up navigation/menu bar~~
-- Add basic routing
-- Do base stylings to match current site design
-- Layout home page
 - Layout sidebar
-- connect to firebase
+- Add basic routing
+- Layout home page
+- Do base stylings to match current site design
 - Layout contact us page
 - Layout pay rent page
 - Layout Recent Years
+- connect to firebase
