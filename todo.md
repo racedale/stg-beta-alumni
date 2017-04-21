@@ -2,7 +2,7 @@
 - ~~Add Angular2 Material~~
 - ~~Add super basic components~~
 - ~~Set up navigation/menu bar~~
-- Layout sidebar
+- ~~Layout sidebar~~
 - Add basic routing
 - Layout home page
 - Do base stylings to match current site design
