@@ -8,14 +8,15 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
 
 const appRoutes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'newsletters',
     component: NewslettersComponent,
-    data: { title: 'Heroes List' }
+    // data: { title: 'Heroes List' }
   },
   // { path: '**', component: PageNotFoundComponent }
 ];
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     SidebarComponent,
     FooterComponent,
-    NewslettersComponent
+    NewslettersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
