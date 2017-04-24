@@ -3,7 +3,7 @@
 - ~~Add super basic components~~
 - ~~Set up navigation/menu bar~~
 - ~~Layout sidebar~~
-- Add basic routing
+- ~~Add basic routing~~
 - Layout home page
 - Do base stylings to match current site design
 - Layout contact us page
