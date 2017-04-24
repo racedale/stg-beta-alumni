@@ -2,6 +2,10 @@
 <p>{{intro}}</p>
 <p>Questions regarding Homecoming or any alumni activities, please contact Richard Holmes at 970/301-4154.</p>
 
-<md-card>
-  <!-- Photo Gallery -->
-</md-card>
+<md-grid-list cols="4">
+  <md-grid-tile
+      *ngFor="let tile of images">
+      <img src="{{tile.src}}" alt="{{tile.altText}}">
+    {{tile.text}}
+  </md-grid-tile>
+</md-grid-list>
