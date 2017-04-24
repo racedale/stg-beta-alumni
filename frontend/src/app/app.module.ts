@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -35,8 +34,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpModule,
-    MaterialModule,
-    Angular2ImageGalleryModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
