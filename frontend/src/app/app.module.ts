@@ -10,15 +10,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'newsletters',
-    component: NewslettersComponent,
-    // data: { title: 'Heroes List' }
+    component: NewslettersComponent
   },
-  // { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -27,7 +27,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     FooterComponent,
     NewslettersComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
