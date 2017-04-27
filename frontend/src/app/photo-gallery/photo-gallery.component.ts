@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialogRef} from '@angular/material';
 
 @Component({
   selector: 'stg-photo-gallery',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoGalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MdDialogRef<PhotoGalleryComponent>) {
+  }
 
   ngOnInit() {
   }
-
+  
+  data = this.dialogRef.componentInstance;
 }

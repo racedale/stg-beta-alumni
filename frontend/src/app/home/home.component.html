@@ -3,9 +3,9 @@
 <p>Questions regarding Homecoming or any alumni activities, please contact Richard Holmes at 970/301-4154.</p>
 
 <md-grid-list cols="4">
-  <md-grid-tile (click)="openDialog()"
-      *ngFor="let tile of images">
-      <img width="100%" src="{{tile.src}}" alt="{{tile.altText}}">
-    {{tile.text}}
+  <md-grid-tile (click)="openDialog(image)"
+      *ngFor="let image of images">
+      <img width="100%" src="{{image.src}}" alt="{{image.altText}}">
+    {{image.text}}
   </md-grid-tile>
 </md-grid-list>
