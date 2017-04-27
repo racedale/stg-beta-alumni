@@ -10,12 +10,17 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { AlumniComponent } from './alumni/alumni.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  {
+    path: 'alumni',
+    component: AlumniComponent
+  },
   {
     path: 'newsletters',
     component: NewslettersComponent
@@ -28,10 +33,11 @@ const appRoutes: Routes = [
     AppComponent,
     SidebarComponent,
     FooterComponent,
+    AlumniComponent,
     NewslettersComponent,
     HomeComponent,
-    PageNotFoundComponent,
-    PhotoGalleryComponent
+    PhotoGalleryComponent,
+    PageNotFoundComponent
   ],
   entryComponents: [PhotoGalleryComponent],
   imports: [
