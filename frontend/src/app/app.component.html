@@ -12,12 +12,16 @@
     Sigma Tau Gamma - Beta Alumni
 
     <span class="app-toolbar-filler"></span>
-    <!-- <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button> -->
   </md-toolbar>
 
 <main>
-  <router-outlet></router-outlet>
+  <button (click)="login()" *ngIf="!name">Anonymous Login</button>
+  <input type="text" id="message" *ngIf="name" placeholder="What is it that you do?" (keyup.enter)="send($event.target.value)" [(ngModel)]="msgVal" />
+  <div id="details-container">
+      <p *ngFor="let item of items | async">{{item.message}}</p>
+  </div>
   <!-- Routed views go here -->
+  <router-outlet></router-outlet>
 </main>
 
 
