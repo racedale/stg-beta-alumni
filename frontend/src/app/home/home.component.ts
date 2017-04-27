@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { PhotoGalleryComponent } from '../photo-gallery/photo-gallery.component';
 
 @Component({
   selector: 'stg-home',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MdDialog) { }
 
   ngOnInit() {
   }
@@ -25,4 +27,11 @@ export class HomeComponent implements OnInit {
     { cols: 2, rows: 1, src: 'src/assets/images/home/homecoming2016/hc_2016_8.jpg', altText: 'homecoming 2016'},
     { cols: 2, rows: 1, src: 'src/assets/images/home/homecoming2016/hc_2016_9.jpg', altText: 'homecoming 2016'},
   ];
+
+  openDialog() {
+    let dialogRef = this.dialog.open(PhotoGalleryComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+    });
+  }
 }
