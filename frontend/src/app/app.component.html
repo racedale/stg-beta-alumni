@@ -15,11 +15,8 @@
   </md-toolbar>
 
 <main>
-  <button (click)="login()" *ngIf="!name">Anonymous Login</button>
-  <input type="text" id="message" *ngIf="name" placeholder="What is it that you do?" (keyup.enter)="send($event.target.value)" [(ngModel)]="msgVal" />
-  <div id="details-container">
-      <p *ngFor="let item of items | async">{{item.message}}</p>
-  </div>
+  <button (click)="login()" *ngIf="!user.displayName">Anonymous Login</button>
+  <span *ngIf="user.displayName">Hello, {{user.displayName}}</span>
   <!-- Routed views go here -->
   <router-outlet></router-outlet>
 </main>

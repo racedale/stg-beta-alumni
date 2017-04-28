@@ -8,6 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 
 import { firebaseConfig } from '../environments/firebase.config';
+import { AuthService } from './providers/auth.service';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

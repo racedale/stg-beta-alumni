@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
+import { AuthService } from './providers/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,31 +7,14 @@ import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  items: FirebaseListObservable<any>;
-  name: any;
-  msgVal: string = '';
+  public user: Object;
 
-  constructor(public af: AngularFire) {
-    this.items = af.database.list('/messages', {
-      query: {
-      limitToLast: 50}
-    });
-    this.af.auth.subscribe(auth => {
-      if(auth) {
-        this.name = auth;
-      }
-    })
+  constructor(public authService: AuthService) {
+    this.user = this.authService.getUser();
   }
 
   login() {
-    this.af.auth.login({
-      provider: AuthProviders.Anonymous,
-      method: AuthMethods.Anonymous
-    })
+    this.authService.loginWithGoogle();
   }
 
-  send(desc: string) {
-    this.items.push({ message: desc });
-    this.msgVal = '';
-  }
 }
