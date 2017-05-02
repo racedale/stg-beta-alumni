@@ -3,6 +3,6 @@
 <md-nav-list>
   <md-list-item [disableRipple]="true" *ngFor="let newsletter of newsletters">
     <p>{{newsletter.title}}</p>
-    <a md-raised-button href="{{newsletter.link}}">View</a>
+    <a md-raised-button target="_blank" href="{{newsletter.link}}">View</a>
   </md-list-item>
 </md-nav-list>
