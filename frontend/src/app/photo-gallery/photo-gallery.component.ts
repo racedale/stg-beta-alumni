@@ -7,12 +7,10 @@ import {MdDialogRef} from '@angular/material';
   styleUrls: ['./photo-gallery.component.scss']
 })
 export class PhotoGalleryComponent implements OnInit {
+  public data = this.dialogRef.componentInstance;
 
-  constructor(public dialogRef: MdDialogRef<PhotoGalleryComponent>) {
-  }
+  constructor(public dialogRef: MdDialogRef<PhotoGalleryComponent>) { }
 
   ngOnInit() {
   }
-  
-  data = this.dialogRef.componentInstance;
 }

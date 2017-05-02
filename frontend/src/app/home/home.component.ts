@@ -12,21 +12,20 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public dialog: MdDialog,
-    public af: AngularFire ) {
-    this.images = af.database.list('/images', {
-      query: {
-      limitToLast: 50}
-    });
-   }
+    public af: AngularFire ) { }
+
+    ngOnInit() {
+      this.images = this.af.database.list('/images', {
+        query: {
+          limitToLast: 50}
+        });
+    }
 
    send(images: Array<any>) {
     //  this.images.forEach(img => {
     //    this.images.push( img );
     //  })
    }
-
-  ngOnInit() {
-  }
 
   images: FirebaseListObservable<any>;
   username: any;
