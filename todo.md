@@ -4,9 +4,10 @@
 - ~~Set up navigation/menu bar~~
 - ~~Layout sidebar~~
 - ~~Add basic routing~~
+- ~~connect to firebase~~
+- pass user data down to componenets
 - Layout home page
 - Do base stylings to match current site design
 - Layout contact us page
 - Layout pay rent page
 - Layout Recent Years
-- connect to firebase
