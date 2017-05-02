@@ -17,12 +17,17 @@ import { AlumniComponent } from './alumni/alumni.component';
 import { NewslettersComponent } from './newsletters/newsletters.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'alumni',
     component: AlumniComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   },
   {
     path: 'newsletters',
@@ -40,7 +45,8 @@ const appRoutes: Routes = [
     NewslettersComponent,
     HomeComponent,
     PhotoGalleryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ContactComponent
   ],
   entryComponents: [PhotoGalleryComponent],
   imports: [

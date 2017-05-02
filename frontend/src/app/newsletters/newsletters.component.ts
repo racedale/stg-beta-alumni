@@ -8,12 +8,6 @@ import {ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class NewslettersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   newsletters = [
     {"title": "Fall 2016 Newsletter", "link": "http://q.b5z.net/i/u/10103480/f/Newsletter_Final.pdf"},
     {"title": "Fall 2015 Newsletter", "link": "http://q.b5z.net/i/u/10103480/f/Fall__15_Newsletter_1.pdf"},
@@ -26,4 +20,10 @@ export class NewslettersComponent implements OnInit {
     {"title": "Spring 2011 Beta Alumni Newsletter", "link": "http://q.b5z.net/i/u/10103480/f/Beta_Nws_2-2011.pdf"},
     {"title": "Winter 2011 Newsletter", "link": "http://q.b5z.net/i/u/10103480/f/TheBetaWinter2011newsletter.doc"}
   ];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
