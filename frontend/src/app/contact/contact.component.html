@@ -1,6 +1,21 @@
+<h1>Contact Us</h1>
 <p>
-  P.O. Box 686
-  Kirksville, MO 63501
-  Phone: 913-909-7917
-  Email:   thorntonpat@rocketmail.com
+  P.O. Box 686<br />
+  Kirksville, MO 63501<br />
+  Phone: 636-357-7457<br />
+  Email:   <a href="mailto:race.dale@gmail.com">race.dale@gmail.com</a><br />
 </p>
+
+<h2>Beta Alumni Association Officers:</h2>
+
+<div class="flex">
+  <div class="flex-fill" *ngFor="let item of officers">
+    <strong>{{item.role}}</strong>
+    <p>{{item.firstName}} {{item.lastName}}</p>
+    <p><a href="mailto:{{item.email}}">{{item.email}}</a></p>
+    <p>{{item.phone | phone}}</p>
+  </div>
+</div>
+
+
+<h3>House Committee:</h3>

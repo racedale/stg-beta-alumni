@@ -18,6 +18,7 @@ import { NewslettersComponent } from './newsletters/newsletters.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/contact.component';
+import { PhonePipe } from './pipes/phone.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     HomeComponent,
     PhotoGalleryComponent,
     PageNotFoundComponent,
-    ContactComponent
+    ContactComponent,
+    PhonePipe
   ],
   entryComponents: [PhotoGalleryComponent],
   imports: [

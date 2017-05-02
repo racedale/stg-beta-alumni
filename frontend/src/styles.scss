@@ -7,6 +7,13 @@ body {
   margin: 0;
 }
 
+.flex {
+  display: flex;
+}
+.flex-fill {
+  flex: 1 1 100%;
+}
+
 ul.sidebar, ul.footer-menu {
   list-style: none;
   padding: 0 2em;
