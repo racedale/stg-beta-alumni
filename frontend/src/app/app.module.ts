@@ -10,51 +10,26 @@ import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from '../environments/firebase.config';
 import { AuthService } from './providers/auth.service';
 import { AppComponent } from './app.component';
+import { AppRoutingModule, routableComponents } from './app.routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { AlumniComponent } from './alumni/alumni.component';
-import { NewslettersComponent } from './newsletters/newsletters.component';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ContactComponent } from './contact/contact.component';
 import { PhonePipe } from './pipes/phone.pipe';
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  {
-    path: 'alumni',
-    component: AlumniComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
-  {
-    path: 'newsletters',
-    component: NewslettersComponent
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
+    routableComponents,
     SidebarComponent,
     FooterComponent,
-    AlumniComponent,
-    NewslettersComponent,
-    HomeComponent,
     PhotoGalleryComponent,
-    PageNotFoundComponent,
-    ContactComponent,
     PhonePipe
   ],
   entryComponents: [PhotoGalleryComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     FormsModule,
     HttpModule,
     MaterialModule,
