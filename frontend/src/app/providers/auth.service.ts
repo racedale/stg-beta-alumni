@@ -1,39 +1,22 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-  user = {
-    displayName: '',
-    email: ''
-  };
+  user: Observable<firebase.User>;
 
-  constructor(public af: AngularFire) {
-    this.af.auth.subscribe(
-      (auth) => {
-        if (auth) {
-          this.user.displayName = auth.google.displayName;
-          this.user.email = auth.google.email;
-          console.log(this.user);
-          // this.router.navigate(['']);
-        } else {
-          this.user.displayName = '';
-          this.user.email = '';
-          // this.router.navigate(['login']);
-        }
-      }
-    );
+  constructor(public afAuth: AngularFireAuth) {
+    this.user = afAuth.authState;
   }
 
   loginWithGoogle() {
-    return this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    });
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   logout() {
-    return this.af.auth.logout();
+     this.afAuth.auth.signOut();
   }
 
   getUser() {

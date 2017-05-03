@@ -15,8 +15,8 @@
   </md-toolbar>
 
 <main>
-  <button (click)="login()" *ngIf="!user.displayName">Anonymous Login</button>
-  <span *ngIf="user.displayName">Hello, {{user.displayName}}</span>
+  <button (click)="login()" *ngIf="!user">Anonymous Login</button>
+  <span *ngIf="user">Hello, {{user.displayName}}</span>
   <!-- Routed views go here -->
   <router-outlet></router-outlet>
 </main>

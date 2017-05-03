@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog} from '@angular/material';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { PhotoGalleryComponent } from '../photo-gallery/photo-gallery.component';
 
 @Component({
@@ -27,10 +27,10 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public dialog: MdDialog,
-    public af: AngularFire ) { }
+    public db: AngularFireDatabase ) { }
 
     ngOnInit() {
-      this.images = this.af.database.list('/images', {
+      this.images = this.db.list('/images', {
         query: {
           limitToLast: 50}
         });
