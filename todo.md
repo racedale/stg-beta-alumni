@@ -5,9 +5,16 @@
 - ~~Layout sidebar~~
 - ~~Add basic routing~~
 - ~~connect to firebase~~
-- pass user data down to componenets
+- ~~pass user data down to componenets~~
 - Layout home page
-- Do base stylings to match current site design
 - Layout contact us page
 - Layout pay rent page
 - Layout Recent Years
+- Do base stylings to match current site design
+- Form to submit Alumni info to database
+- Alumni contact list browsing / searching
+- House Repair form submission
+- Lease signing through HelloSign or DocuSign
+- Rent payment through Braintree
+- Browse old newsletters through Issuu
+- Security: Https: CORS, XSS, CSP, CSRF, Same Origin, Sub Resource hash, HSTS preload, mozilla observatory. Report-URI = free csp report end point.
