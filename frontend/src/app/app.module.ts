@@ -2,16 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import './rxjs-extensions';
 
 import { firebaseConfig } from '../environments/firebase.config';
-import { AuthService } from './providers/auth.service';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routableComponents } from './app.routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -33,14 +26,8 @@ import { PhonePipe } from './pipes/phone.pipe';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule,
-    HttpModule,
-    MaterialModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule
+    CoreModule
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

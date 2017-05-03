@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
-import { AuthService } from './providers/auth.service';
+import { AuthService } from './core/providers/auth.service';
 
 @Component({
   selector: 'app-root',
