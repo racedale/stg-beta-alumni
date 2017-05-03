@@ -7,6 +7,10 @@ body {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 ul.sidebar, ul.footer-menu {
   list-style: none;
   padding: 0 2em;

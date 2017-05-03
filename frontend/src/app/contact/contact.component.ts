@@ -13,28 +13,32 @@ export class ContactComponent implements OnInit {
       "firstName": "Richard",
       "lastName": "Holmes",
       "email": "rich1bigdog@aol.com",
-      "phone": "9703014154"
+      "phone": "9703014154",
+      "profileImg": "src/assets/images/contact/profile-pic.svg"
     },
     {
       "role": "Vice President",
       "firstName": "Dale",
       "lastName": "Barrett",
       "email": "dbarr6569@socket.net",
-      "phone": "6606657721"
+      "phone": "6606657721",
+      "profileImg": "src/assets/images/contact/profile-pic.svg"
     },
     {
       "role": "Treasurer",
       "firstName": "Brad",
       "lastName": "Beard",
       "email": "beards@cableone.net",
-      "phone": "6606651928"
+      "phone": "6606651928",
+      "profileImg": "src/assets/images/contact/profile-pic.svg"
     },
     {
       "role": "Secretary",
       "firstName": "Dale",
       "lastName": "Race",
       "email": "race.dale@gmail.com",
-      "phone": "6363577457"
+      "phone": "6363577457",
+      "profileImg": "src/assets/images/contact/profile-pic.svg"
     },
   ];
 

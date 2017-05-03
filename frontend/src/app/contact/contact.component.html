@@ -10,6 +10,9 @@
 
 <div class="flex">
   <div class="flex-fill" *ngFor="let item of officers">
+    <div class="officer-profile">
+      <img src="{{item.profileImg}}" alt="">
+    </div>
     <strong>{{item.role}}</strong>
     <p>{{item.firstName}} {{item.lastName}}</p>
     <p><a href="mailto:{{item.email}}">{{item.email}}</a></p>
