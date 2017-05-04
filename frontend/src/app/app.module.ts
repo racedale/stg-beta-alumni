@@ -14,9 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    routableComponents,
     SidebarComponent,
     FooterComponent,
+    routableComponents,
   ],
   imports: [
     BrowserModule,

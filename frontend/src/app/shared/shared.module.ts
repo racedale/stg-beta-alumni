@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { PhonePipe } from '../pipes/phone.pipe';
 import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
@@ -9,9 +10,9 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
     PhotoGalleryComponent
   ],
   entryComponents: [PhotoGalleryComponent],
-  imports: [
-  ],
+  imports: [ CommonModule ],
   exports: [
+    CommonModule,
     PhonePipe
   ]
 })
