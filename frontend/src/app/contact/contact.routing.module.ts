@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact.component';
 
 const routes: Routes = [
-  { path: 'contact', component: ContactComponent }
+  { path: '', component: ContactComponent }
 ];
 
 export const routedComponents = [
@@ -12,7 +12,7 @@ export const routedComponents = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
 export class ContactRoutingModule { }
