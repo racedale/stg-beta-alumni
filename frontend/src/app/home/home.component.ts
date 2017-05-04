@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog} from '@angular/material';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { PhotoGalleryComponent } from '../photo-gallery/photo-gallery.component';
+import { PhotoGalleryComponent } from '../shared/photo-gallery/photo-gallery.component';
 
 @Component({
   selector: 'stg-home',
