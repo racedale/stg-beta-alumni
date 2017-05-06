@@ -15,9 +15,11 @@
   </md-toolbar>
 
 <main>
-  <button (click)="login()" *ngIf="!user">Google Login</button>
-  <span *ngIf="user">Hello, {{user.displayName}}</span>
-  <button (click)="logout()" *ngIf="user">Logout</button>
+  <p>
+    <button (click)="login()" *ngIf="!user">Google Login</button>
+    <span *ngIf="user">Hello, {{user.displayName}}</span>
+    <button (click)="logout()" *ngIf="user">Logout</button>
+  </p>
   <!-- Routed views go here -->
   <router-outlet></router-outlet>
 </main>
