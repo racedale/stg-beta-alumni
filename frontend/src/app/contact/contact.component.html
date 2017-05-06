@@ -22,3 +22,12 @@
 
 
 <h3>House Committee:</h3>
+
+<div class="flex flex-wrap house-committee">
+  <div class="flex-auto" *ngFor="let item of houseCommittee">
+    <strong>{{item.role}}</strong>
+    <p>{{item.firstName}} {{item.lastName}}</p>
+    <p><a href="mailto:{{item.email}}">{{item.email}}</a></p>
+    <p>{{item.phone | phone}}</p>
+  </div>
+</div>
