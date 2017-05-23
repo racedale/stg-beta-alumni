@@ -1,0 +1,22 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - cd frontend
+  pre_build:
+    commands:
+      - echo npm installing...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - build.zip
+  discard-paths: yes
+  base-directory: location
