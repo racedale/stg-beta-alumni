@@ -4,10 +4,12 @@ phases:
   pre_build:
     commands:
       - cd frontend
+      - ls
       - echo npm installing...
       - npm install
   build:
     commands:
+      - ls
       - echo Build started on `date`
       - npm run build
   post_build:
