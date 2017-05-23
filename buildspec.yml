@@ -1,11 +1,9 @@
 version: 0.1
 
 phases:
-  install:
-    commands:
-      - cd frontend
   pre_build:
     commands:
+      - cd frontend
       - echo npm installing...
       - npm install
   build:
