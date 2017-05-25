@@ -1,0 +1,12 @@
+.officer-profile {
+    margin: 1em;
+}
+.house-committee {
+  // max-width: 500px;
+  div {
+    margin-right: 1em;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

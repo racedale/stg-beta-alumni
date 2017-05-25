@@ -1,0 +1,33 @@
+<h1>Contact Us</h1>
+<p>
+  P.O. Box 686<br />
+  Kirksville, MO 63501<br />
+  Phone: 636-357-7457<br />
+  Email:   <a href="mailto:race.dale@gmail.com">race.dale@gmail.com</a><br />
+</p>
+
+<h2>Beta Alumni Association Officers:</h2>
+
+<div class="flex">
+  <div class="flex-fill" *ngFor="let item of officers">
+    <div class="officer-profile">
+      <img src="{{item.profileImg}}" alt="">
+    </div>
+    <strong>{{item.role}}</strong>
+    <p>{{item.firstName}} {{item.lastName}}</p>
+    <p><a href="mailto:{{item.email}}">{{item.email}}</a></p>
+    <p>{{item.phone | phone}}</p>
+  </div>
+</div>
+
+
+<h3>House Committee:</h3>
+
+<div class="flex flex-wrap house-committee">
+  <div class="flex-auto" *ngFor="let item of houseCommittee">
+    <strong>{{item.role}}</strong>
+    <p>{{item.firstName}} {{item.lastName}}</p>
+    <p><a href="mailto:{{item.email}}">{{item.email}}</a></p>
+    <p>{{item.phone | phone}}</p>
+  </div>
+</div>

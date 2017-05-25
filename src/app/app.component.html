@@ -1,0 +1,29 @@
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+
+<md-sidenav #sidenav mode="side" class="app-sidenav">
+  <stg-sidebar></stg-sidebar>
+</md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+    Sigma Tau Gamma - Beta Alumni
+
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+<main>
+  <p>
+    <button (click)="login()" *ngIf="!user">Google Login</button>
+    <span *ngIf="user">Hello, {{user.displayName}}</span>
+    <button (click)="logout()" *ngIf="user">Logout</button>
+  </p>
+  <!-- Routed views go here -->
+  <router-outlet></router-outlet>
+</main>
+
+
+  <stg-footer></stg-footer>
+</md-sidenav-container>

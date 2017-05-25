@@ -1,5 +1,0 @@
-.nav-drawer > div {
-  bottom: 0;
-  top: initial !important;
-  height: calc(100% - 50px) !important;
-}

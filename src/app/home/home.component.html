@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<p>{{intro}}</p>
+<p>Questions regarding Homecoming or any alumni activities, please contact Richard Holmes at 970/301-4154.</p>
+
+<button *ngIf="username" (click)="send(images)">Upload</button>
+
+<md-grid-list cols="4">
+  <md-grid-tile (click)="openDialog(image)"
+      *ngFor="let image of images | async">
+      <img width="100%" src="{{image.src}}" alt="{{image.altText}}">
+    {{image.text}}
+  </md-grid-tile>
+</md-grid-list>

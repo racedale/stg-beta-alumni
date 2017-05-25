@@ -1,0 +1,19 @@
+md-sidenav-container {
+  min-height: 100vh;
+}
+
+.app-icon-button {
+  background: none;
+  border: 0;
+  color: #fff;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 72em;
+  padding: 1em;
+}
