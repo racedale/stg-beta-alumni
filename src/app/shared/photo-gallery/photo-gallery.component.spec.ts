@@ -1,8 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CoreModule } from '../../core/core.module';
+import { SharedModule } from '../shared.module';
 import { MdDialogRef } from '@angular/material';
 
 import { PhotoGalleryComponent } from './photo-gallery.component';
+
+class MdDialogRefMock {
+  componentInstance = {};
+}
 
 describe('PhotoGalleryComponent', () => {
   let component: PhotoGalleryComponent;
@@ -10,9 +15,9 @@ describe('PhotoGalleryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ CoreModule ],
-      declarations: [ PhotoGalleryComponent ],
-      providers: [ MdDialogRef ]
+      imports: [ CoreModule, SharedModule ],
+      // declarations: [ PhotoGalleryComponent ],
+      providers: [ { provide: MdDialogRef, useClass: MdDialogRefMock } ]
     })
     .compileComponents();
   }));
