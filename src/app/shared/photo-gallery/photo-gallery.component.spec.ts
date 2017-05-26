@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CoreModule } from '../../core/core.module';
+import { MdDialogRef } from '@angular/material';
 
 import { PhotoGalleryComponent } from './photo-gallery.component';
 
@@ -8,7 +10,9 @@ describe('PhotoGalleryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoGalleryComponent ]
+      imports: [ CoreModule ],
+      declarations: [ PhotoGalleryComponent ],
+      providers: [ MdDialogRef ]
     })
     .compileComponents();
   }));

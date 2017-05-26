@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -13,6 +14,7 @@ import { AuthService } from './providers/auth.service';
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     HttpModule,
@@ -22,6 +24,7 @@ import { AuthService } from './providers/auth.service';
     AngularFireDatabaseModule
   ],
   exports: [
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     HttpModule,
